@@ -21,13 +21,6 @@
     "text": "1 Quick start\nTo quickly run the StrainCascade pipeline on a sequencing sample from the command line, use the following minimal command:\nstraincascade -i /path/to/your/input_file.bam\nNote: Running the StrainCascade is resource-intensive and will overwhelm standard desktop or laptop computers. For optimal performance, we strongly recommend using a high-performance computing (HPC) environment.\nFor efficient execution, it’s recommended to submit the pipeline as a SLURM sbatch job. Below is an example of a basic SLURM submission script. Be sure to adjust the --partition parameter to match your environment:\n#!/bin/bash #SBATCH \n--job-name=\"StrainCascade\" \n#SBATCH --output=StrainCascade\\_%j.out \n#SBATCH --cpus-per-task=32 \n#SBATCH --mem=320G # 10GB per CPU for 32 CPUs \n#SBATCH --partition=your_partition\n\n# Execute the job\n\nstraincascade -i /path/to/your/input_file.bam\nTo submit the script to your SLURM scheduler, use:\nsbatch your_script.sh"
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "StrainCascade",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\nCode\n1 + 1\n\n\n[1] 2"
-  },
-  {
     "objectID": "installation.html",
     "href": "installation.html",
     "title": "Installation",
