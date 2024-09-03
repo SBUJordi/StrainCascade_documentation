@@ -42,10 +42,17 @@
     "text": "2 Installation dependencies\n\nGit\nApptainer\nAll further software dependencies (listed in detail under Dependencies) are bundled in Apptainer images, which are automatically downloaded and used when installing/running StrainCascade. This approach enhances:\n\nEase of use: Simplified installation and execution process\nPortability: Consistent performance across different computing environments\nReproducibility: Ensures identical software environments for all users\nVersion control: Precise management of software versions and their interactions Isolation: Minimises conflicts with existing system libraries"
   },
   {
-    "objectID": "installation.html#installation-steps",
-    "href": "installation.html#installation-steps",
+    "objectID": "installation.html#default-installation",
+    "href": "installation.html#default-installation",
     "title": "Installation",
-    "section": "3 Installation steps",
-    "text": "3 Installation steps\nClone the StrainCascade GitHub repository\ngit clone https://github.com/SBUJordi/StrainCascade.git\nMove to the StrainCascade directory\ncd StrainCascade\nMake the StrainCascade scripts executable\nchmod +x scripts/*\nExecute the installation script (pulls Apptainer images and downloads databases)\n./scripts/StrainCascade_installation.sh\nYou will be prompted by an interactive installation guide if you have enough disk space.\nRunning StrainCascade installation...\nSufficient disk space available: XXXGB\nApptainer is installed.\nDo you want to do a full installation of StrainCascade? (y/n)\nFor a complete installation from scratch, choose y when asked:\ny\nThe installation process will take a while."
+    "section": "3 Default installation",
+    "text": "3 Default installation\nClone the StrainCascade GitHub repository\ngit clone https://github.com/SBUJordi/StrainCascade.git\nMove to the StrainCascade directory\ncd StrainCascade\nMake the StrainCascade scripts executable\nchmod +x scripts/*\nExecute the installation script (pulls Apptainer images and downloads databases)\n./scripts/StrainCascade_installation.sh\nYou will be prompted by an interactive installation guide if you have enough disk space.\nRunning StrainCascade installation...\nSufficient disk space available: XXXGB\nApptainer is installed.\nDo you want to do a full installation of StrainCascade? (y/n)\nFor a complete installation from scratch, choose y when asked:\ny\nThe installation process will take a while."
+  },
+  {
+    "objectID": "installation.html#custom-installation-selective-apptainer-imagesdatabases",
+    "href": "installation.html#custom-installation-selective-apptainer-imagesdatabases",
+    "title": "Installation",
+    "section": "4 Custom Installation (Selective Apptainer images/databases)",
+    "text": "4 Custom Installation (Selective Apptainer images/databases)\nIn the event of an error, disruption, or if you prefer to install only specific Apptainer images or databases, you can choose n when prompted for a full installation. This will allow you to sequentially decide for each individual Apptainer image or database whether you want to download and install it.\nThis option is particularly useful in scenarios where:\n\nYou have limited disk space or bandwidth and need to prioritize specific components.\nYou encountered an error during a previous installation attempt and need to retry specific parts of the installation.\nYou are troubleshooting and want to isolate certain components for testing.\n\nWhen opting for a selective installation, the script will guide you through each component, providing a brief description and asking whether you wish to install it. This process ensures that only the necessary components are downloaded, giving you full control over the installation.\nExample Prompt:\nDo you want to install checkm2_db? (y/n)\nBy answering y or n to each prompt, you can customise the installation to your specific needs."
   }
 ]
