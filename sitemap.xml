@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/documentation.html</loc>
-    <lastmod>2024-09-03T12:01:19.584Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/license.html</loc>
-    <lastmod>2024-09-03T12:01:19.588Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/usage.html</loc>
-    <lastmod>2024-09-03T12:01:19.588Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/installation.html</loc>
-    <lastmod>2024-09-03T12:01:19.588Z</lastmod>
+    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/publications.html</loc>
+    <lastmod>2024-10-14T10:10:37.636Z</lastmod>
   </url>
   <url>
     <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/dependencies.html</loc>
-    <lastmod>2024-09-03T12:01:19.584Z</lastmod>
+    <lastmod>2024-10-14T10:10:37.632Z</lastmod>
   </url>
   <url>
     <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/tutorial.html</loc>
-    <lastmod>2024-09-03T12:01:19.588Z</lastmod>
+    <lastmod>2024-10-14T10:10:37.636Z</lastmod>
   </url>
   <url>
-    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/publications.html</loc>
-    <lastmod>2024-09-03T12:01:19.588Z</lastmod>
+    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/usage.html</loc>
+    <lastmod>2024-10-14T10:10:37.636Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/installation.html</loc>
+    <lastmod>2024-10-14T10:10:37.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/documentation.html</loc>
+    <lastmod>2024-10-14T10:10:37.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SBUJordi.github.io/StrainCascade_prepublish_documentation/license.html</loc>
+    <lastmod>2024-10-14T10:10:37.636Z</lastmod>
   </url>
 </urlset>
