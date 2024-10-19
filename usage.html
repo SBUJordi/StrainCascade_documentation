@@ -261,8 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   -----------------------------------------------------------------
   Example usage: .scritps/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh /path/to/input/directory your_partition your.email@example.com /path/to/file_list.txt</code></pre>
 <ul>
-<li>By default the script will generate a submission script for each file in the input directory and submit them to the SLURM scheduler. Optionally, you can provide a text file limiting execution to specific samples files in the input directory.</li>
-<li>By default the script will execute a standard run of StainCascade for each of the samples as SBATCH job: <code>straincascade -i "$input_file" -r main -t 32</code> (using 96GB of RAM). If you are experienced with StrainCascade and using SBATCH and want to customize the execution, you can modify the script to your needs.</li>
+<li>By default the script will generate a submission script for each file in the input directory with one of the following endings: <code>.bam</code>, <code>fastq</code>, <code>fastq.gz</code>, <code>.fasta</code>, <code>fna</code> or <code>.fa</code>. The files will be submit to the SLURM scheduler. Optionally, you can provide a text file (<code>file_list</code>) limiting execution to specific files in the input directory.</li>
+<li>By default the script will execute a standard run of StainCascade for each of the samples as SBATCH job: <code>straincascade -a "$input_file" -r main -t 32</code> (using 96GB of RAM). If you are experienced with StrainCascade and using SBATCH and want to customize the execution, you can modify the script to your needs.</li>
 </ul>
 </section>
 <section id="high-throughput-sbatch-set-up-from-assembly-files" class="level2" data-number="4">
@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   -----------------------------------------------------------------
   Example usage: .scritps/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh /path/to/input/directory your_partition your.email@example.com /path/to/file_list.txt</code></pre>
 <ul>
-<li>By default the script will generate a submission script for each file in the input directory and submit them to the SLURM scheduler. Optionally, you can provide a text file limiting execution to specific samples files in the input directory.</li>
+<li>By default the script will generate a submission script for each file in the input directory with one of the following endings: <code>.fasta</code>, <code>fna</code> or <code>.fa</code>. The files will be submit to the SLURM scheduler. Optionally, you can provide a text file (<code>file_list</code>) limiting execution to specific files in the input directory.</li>
 <li>By default the script will execute a standard run of StainCascade for each of the samples as SBATCH job: <code>straincascade -a "$input_file" -r main -t 32</code> (using 96GB of RAM). If you are experienced with StrainCascade and using SBATCH and want to customize the execution, you can modify the script to your needs.</li>
 </ul>
 
