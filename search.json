@@ -88,7 +88,7 @@
     "href": "installation.html#caveats",
     "title": "Installation",
     "section": "7 Caveats",
-    "text": "7 Caveats\n\nThe installation process writes the necessary paths to the PATH variable (via your shell configuration files and/or conda variable). Generally StrainCascade should be able to handle multiple installations in different conda environments. However, if you encounter issues, please check your PATH variable and make sure that the correct StrainCascade installation is used."
+    "text": "7 Caveats\n\nThe installation process writes the necessary paths to the PATH variable (via your shell configuration files and/or conda variable). Generally StrainCascade should be able to handle multiple installations in different conda environments. However, if you encounter issues, please check your $PATH variable and make sure that the correct StrainCascade installation is used."
   },
   {
     "objectID": "license.html",
