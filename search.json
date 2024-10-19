@@ -84,6 +84,13 @@
     "text": "6 Updating existing StraingCascade software instllation\nIf you have StrainCascade already installed but would like to update the software (scripts) without reinstalling Apptainer images or databeses, you can choose n when prompted for a full installation. You will then be prompted if you want to update the StrainCascade software: Do you want to update the StrainCascade software (scripts)? (y/n). If you choose y all current StrainCascade scripts will be updated.\nThis option is particularly useful in scenarios where:\n\nThere are improvements or bug fixes in the current release of StrainCascade software available that you want to use.\n\nNote: This will not replace the necessity of re-installment after new major version releases of StrainCase with new features, Apptainer images or databases."
   },
   {
+    "objectID": "installation.html#caveats",
+    "href": "installation.html#caveats",
+    "title": "Installation",
+    "section": "7 Caveats",
+    "text": "7 Caveats\n\nThe installation process writes the necessary paths to the PATH variable (via your shell configuration files and/or conda variable). Generally StrainCascade should be able to handle multiple installations in different conda environments. However, if you encounter issues, please check your PATH variable and make sure that the correct StrainCascade installation is used."
+  },
+  {
     "objectID": "license.html",
     "href": "license.html",
     "title": "StrainCascade software licenses",
