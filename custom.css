@@ -2,6 +2,8 @@
 :root {
   --main-navbar-color: #336392;
   --main-font: 'Source Sans Pro', sans-serif;
+  --link-color: #DC6826;
+  --hover-color: #DC6826;
 }
 
 /* Apply custom font to all elements */
@@ -19,6 +21,25 @@ body, .navbar, .nav, .dataTables_wrapper, .dataTable, .table, h1, h2, h3, h4, h5
 .navbar-brand,
 .navbar-nav > li > a {
   color: white !important;
+  transition: color 0.3s ease;
+}
+
+/* Set hover color for navbar text, including the title */
+.navbar-brand:hover,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  color: var(--hover-color) !important;
+  background-color: transparent !important;
+}
+
+/* Style for active/selected navbar item and title */
+.navbar-brand.active,
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus,
+.navbar-nav > li > a[aria-current="page"] {
+  color: var(--hover-color) !important;
+  background-color: transparent !important;
 }
 
 /* Set border-top-color to custom color for active tabs */
@@ -39,4 +60,26 @@ h1, h2, h3, h4, h5, h6 {
 /* Specifically target the titles we want to change */
 .chart-title, .chart-stage h3 {
   font-family: var(--main-font) !important;
+}
+
+/* Set color for all links */
+a {
+  color: var(--link-color) !important;
+}
+
+/* Table of Contents styles */
+.sidebar nav[role="doc-toc"] ul > li > a {
+  color: black !important;
+  text-decoration: none;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a:hover,
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  color: var(--hover-color) !important;
+  text-decoration: none;
+}
+
+/* Optional: Add hover effect for links */
+a:hover {
+  text-decoration: underline;
 }
