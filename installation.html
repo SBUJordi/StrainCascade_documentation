@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installation-dependencies" id="toc-installation-dependencies" class="nav-link" data-scroll-target="#installation-dependencies"><span class="header-section-number">2</span> Installation dependencies</a></li>
   <li><a href="#default-installation-interactive" id="toc-default-installation-interactive" class="nav-link" data-scroll-target="#default-installation-interactive"><span class="header-section-number">3</span> Default installation (interactive)</a></li>
   <li><a href="#default-installation-sbatch" id="toc-default-installation-sbatch" class="nav-link" data-scroll-target="#default-installation-sbatch"><span class="header-section-number">4</span> Default installation (SBATCH)</a></li>
-  <li><a href="#custom-installation-selective-apptainer-imagesdatabases" id="toc-custom-installation-selective-apptainer-imagesdatabases" class="nav-link" data-scroll-target="#custom-installation-selective-apptainer-imagesdatabases"><span class="header-section-number">5</span> Custom Installation (selective Apptainer images/databases)</a></li>
+  <li><a href="#custom-installation" id="toc-custom-installation" class="nav-link" data-scroll-target="#custom-installation"><span class="header-section-number">5</span> Custom Installation</a></li>
   <li><a href="#updating-existing-straingcascade-software-instllation" id="toc-updating-existing-straingcascade-software-instllation" class="nav-link" data-scroll-target="#updating-existing-straingcascade-software-instllation"><span class="header-section-number">6</span> Updating existing StraingCascade software instllation</a></li>
   <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats"><span class="header-section-number">7</span> Caveats</a></li>
   </ul>
@@ -262,8 +262,8 @@ Do you want to do a full installation of StrainCascade? (y/n)</code></pre>
 <p>Replace <code>your_partition</code> with your HPC’s SLURM partition name and <code>your.email@example.com</code> with your email address for job notifications.</p>
 <p>The installation will be handled by SLURM and may take between 12 hours to over a day, depending on your system and network speed. You will receive an email notification when the installation is complete or if it fails.</p>
 </section>
-<section id="custom-installation-selective-apptainer-imagesdatabases" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="custom-installation-selective-apptainer-imagesdatabases"><span class="header-section-number">5</span> Custom Installation (selective Apptainer images/databases)</h2>
+<section id="custom-installation" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="custom-installation"><span class="header-section-number">5</span> Custom Installation</h2>
 <p>In the event of an error, disruption, or if you prefer to install only specific Apptainer images or databases, you can choose <code>n</code> when prompted for a full installation. This will allow you to sequentially decide for each individual Apptainer image or database whether you want to download and install it.</p>
 <p>This option is particularly useful in scenarios where:</p>
 <ul>
