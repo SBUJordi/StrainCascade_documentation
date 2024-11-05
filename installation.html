@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#default-installation-sbatch" id="toc-default-installation-sbatch" class="nav-link" data-scroll-target="#default-installation-sbatch"><span class="header-section-number">4</span> Default installation (SBATCH)</a></li>
   <li><a href="#custom-installation" id="toc-custom-installation" class="nav-link" data-scroll-target="#custom-installation"><span class="header-section-number">5</span> Custom installation</a></li>
   <li><a href="#updating-existing-straingcascade-software-instllation" id="toc-updating-existing-straingcascade-software-instllation" class="nav-link" data-scroll-target="#updating-existing-straingcascade-software-instllation"><span class="header-section-number">6</span> Updating existing StraingCascade software instllation</a></li>
-  <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats"><span class="header-section-number">7</span> Caveats</a></li>
+  <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats"><span class="header-section-number">7</span> CAVEATS</a></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +286,7 @@ Do you want to do a full installation of StrainCascade? (y/n)</code></pre>
 <p><strong>Note:</strong> This will not replace the necessity of re-installment after new major version releases of StrainCase with new features, Apptainer images or databases.</p>
 </section>
 <section id="caveats" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="caveats"><span class="header-section-number">7</span> Caveats</h2>
+<h2 data-number="7" class="anchored" data-anchor-id="caveats"><span class="header-section-number">7</span> CAVEATS</h2>
 <ul>
 <li><p>The installation process updates your <code>PATH</code> variable by modifying shell configuration files and/or the conda environment. StrainCascade generally supports multiple installations across different conda environments. If you experience issues, verify that your <code>$PATH</code> points to the correct StrainCascade installation.</p></li>
 <li><p>When re-installing Apptainer images after a StrainCascade update, newer versions (indicated by a higher :v#) of a former image may be downloaded, while the former versions will remain. StrainCascade will prioritize the first matching image, which may not always be the latest version. While this usually doesn’t cause errors, for optimal functionality, it’s recommended to check the <code>apptainer_images</code> directory and remove outdated versions after re-installations. You can find the <code>apptainer_images</code> directory in the StrainCascade installation directory and easily navigate to it with the following command (activate the conda environment first if necessary):</p>
