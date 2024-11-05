@@ -169,9 +169,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#high-throughput-sbatch-set-up-from-assembly-files" id="toc-high-throughput-sbatch-set-up-from-assembly-files" class="nav-link" data-scroll-target="#high-throughput-sbatch-set-up-from-assembly-files"><span class="header-section-number">4</span> High throughput SBATCH set-up (from assembly files)</a></li>
   <li><a href="#updating-straincascade" id="toc-updating-straincascade" class="nav-link" data-scroll-target="#updating-straincascade"><span class="header-section-number">5</span> Updating StrainCascade</a>
   <ul class="collapse">
-  <li><a href="#update-software" id="toc-update-software" class="nav-link" data-scroll-target="#update-software"><span class="header-section-number">5.1</span> Update software:</a></li>
-  <li><a href="#update-apptainer-images" id="toc-update-apptainer-images" class="nav-link" data-scroll-target="#update-apptainer-images"><span class="header-section-number">5.2</span> Update Apptainer images:</a></li>
-  <li><a href="#update-databases" id="toc-update-databases" class="nav-link" data-scroll-target="#update-databases"><span class="header-section-number">5.3</span> Update databases:</a></li>
+  <li><a href="#update-software" id="toc-update-software" class="nav-link" data-scroll-target="#update-software"><span class="header-section-number">5.1</span> Update software</a></li>
+  <li><a href="#update-apptainer-images" id="toc-update-apptainer-images" class="nav-link" data-scroll-target="#update-apptainer-images"><span class="header-section-number">5.2</span> Update Apptainer images</a></li>
+  <li><a href="#update-databases" id="toc-update-databases" class="nav-link" data-scroll-target="#update-databases"><span class="header-section-number">5.3</span> Update databases</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -307,17 +307,17 @@ General Options:
 <h2 data-number="5" class="anchored" data-anchor-id="updating-straincascade"><span class="header-section-number">5</span> Updating StrainCascade</h2>
 <p>To keep your StrainCascade installation current, you can use the following options to update the software, Apptainer images, and databases.</p>
 <section id="update-software" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="update-software"><span class="header-section-number">5.1</span> Update software:</h3>
+<h3 data-number="5.1" class="anchored" data-anchor-id="update-software"><span class="header-section-number">5.1</span> Update software</h3>
 <p>Updates StrainCascade software to the latest version. This will remove all currently installed software.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">straincascade</span> <span class="at">--update-software</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="update-apptainer-images" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="update-apptainer-images"><span class="header-section-number">5.2</span> Update Apptainer images:</h3>
+<h3 data-number="5.2" class="anchored" data-anchor-id="update-apptainer-images"><span class="header-section-number">5.2</span> Update Apptainer images</h3>
 <p>Downloads the all the latest Apptainer images required for StrainCascade. This will remove all currently installed Apptainer images.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">straincascade</span> <span class="at">--update-images</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="update-databases" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="update-databases"><span class="header-section-number">5.3</span> Update databases:</h3>
+<h3 data-number="5.3" class="anchored" data-anchor-id="update-databases"><span class="header-section-number">5.3</span> Update databases</h3>
 <p>Updates all required databases to the newest versions. This will remove all currently installed databases. CAVEAT: The database installation may take between 12 hours to over a day, depending on your system and network speed.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">straincascade</span> <span class="at">--update-databases</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
