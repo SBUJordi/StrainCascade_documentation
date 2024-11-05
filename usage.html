@@ -173,6 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#update-apptainer-images" id="toc-update-apptainer-images" class="nav-link" data-scroll-target="#update-apptainer-images"><span class="header-section-number">5.2</span> Update Apptainer images</a></li>
   <li><a href="#update-databases" id="toc-update-databases" class="nav-link" data-scroll-target="#update-databases"><span class="header-section-number">5.3</span> Update databases</a></li>
   </ul></li>
+  <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats"><span class="header-section-number">6</span> CAVEATS</a></li>
   </ul>
 </nav>
     </div>
@@ -320,9 +321,15 @@ General options:
 <h3 data-number="5.3" class="anchored" data-anchor-id="update-databases"><span class="header-section-number">5.3</span> Update databases</h3>
 <p>Updates all required databases to the newest versions. This will remove all currently installed databases. CAVEAT: The database installation may take between 12 hours to over a day, depending on your system and network speed.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">straincascade</span> <span class="at">--update-databases</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
 </section>
+</section>
+<section id="caveats" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="caveats"><span class="header-section-number">6</span> CAVEATS</h2>
+<ul>
+<li><strong>Conda environment and PATH variable in SBATCH jobs:</strong> When submitting <code>sbatch</code> jobs, it is important to note that your Conda environment will not remain active. If you have multiple installations of StrainCascade, each installation will add its respective paths to the <code>PATH</code> variable. Only by activating the correct Conda environment in your <code>sbatch</code> script (not implement in above examples) will you ensure that the appropriate paths are used, allowing StrainCascade to function as expected. Without this activation, <code>sbatch</code> jobs may inadvertently use incorrect paths, potentially leading to errors or unexpected behaviour.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

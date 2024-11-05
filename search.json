@@ -42,6 +42,13 @@
     "text": "5 Updating StrainCascade\nTo keep your StrainCascade installation current, you can use the following options to update the software, Apptainer images, and databases.\n\n5.1 Update software\nUpdates StrainCascade software to the latest version. This will remove all currently installed software.\nstraincascade --update-software\n\n\n5.2 Update Apptainer images\nDownloads the all the latest Apptainer images required for StrainCascade. This will remove all currently installed Apptainer images.\nstraincascade --update-images\n\n\n5.3 Update databases\nUpdates all required databases to the newest versions. This will remove all currently installed databases. CAVEAT: The database installation may take between 12 hours to over a day, depending on your system and network speed.\nstraincascade --update-databases"
   },
   {
+    "objectID": "usage.html#caveats",
+    "href": "usage.html#caveats",
+    "title": "Usage",
+    "section": "6 CAVEATS",
+    "text": "6 CAVEATS\n\nConda environment and PATH variable in SBATCH jobs: When submitting sbatch jobs, it is important to note that your Conda environment will not remain active. If you have multiple installations of StrainCascade, each installation will add its respective paths to the PATH variable. Only by activating the correct Conda environment in your sbatch script (not implement in above examples) will you ensure that the appropriate paths are used, allowing StrainCascade to function as expected. Without this activation, sbatch jobs may inadvertently use incorrect paths, potentially leading to errors or unexpected behaviour."
+  },
+  {
     "objectID": "installation.html",
     "href": "installation.html",
     "title": "Installation",
@@ -95,7 +102,7 @@
     "href": "installation.html#caveats",
     "title": "Installation",
     "section": "7 CAVEATS",
-    "text": "7 CAVEATS\n\nThe installation process updates your PATH variable by modifying shell configuration files and/or the conda environment. StrainCascade generally supports multiple installations across different conda environments. If you experience issues, verify that your $PATH points to the correct StrainCascade installation.\nWhen re-installing Apptainer images after a StrainCascade update, newer versions (indicated by a higher :v#) of a former image may be downloaded, while the former versions will remain. StrainCascade will prioritize the first matching image, which may not always be the latest version. While this usually doesn’t cause errors, for optimal functionality, it’s recommended to check the apptainer_images directory and remove outdated versions after re-installations. You can find the apptainer_images directory in the StrainCascade installation directory and easily navigate to it with the following command (activate the conda environment first if necessary):\ncd $(dirname $(which straincascade))/../apptainer_images"
+    "text": "7 CAVEATS\n\nPATH configuration for multiple installations: The installation process updates your PATH variable by modifying shell configuration files and/or the conda environment. StrainCascade generally supports multiple installations across different conda environments. If you experience issues, verify that your $PATH points to the correct StrainCascade installation.\nManaging Apptainer images after updates: When re-installing Apptainer images after a StrainCascade update, newer versions (indicated by a higher :v#) of a former image may be downloaded. Although older versions are typically removed (e.g., when using straincascade --update-images), there may be cases where previous Apptainer images remain. In such cases, StrainCascade will prioritize the first matching image, which may not always be the latest version. While this usually doesn’t cause errors, for optimal functionality, it’s recommended to check the apptainer_images directory and remove outdated versions after re-installations. You can find the apptainer_images directory in the StrainCascade installation directory and easily navigate to it with the following command (activate the conda environment first if necessary):\ncd $(dirname $(which straincascade))/../apptainer_images"
   },
   {
     "objectID": "license.html",
