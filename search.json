@@ -60,21 +60,21 @@
     "href": "installation.html",
     "title": "Installation",
     "section": "",
-    "text": "Linux OS (e.g., CentOS, Ubuntu, Debian, etc.)\n~ 580GB disk space software and reference databases\nFor optimal performance, we recommend running StrainCascade with 32 CPU cores, with 3GB of RAM allocated per core (= total of 96GB of RAM)."
+    "text": "Linux OS (e.g., CentOS, Ubuntu, Debian, etc.)\n~ 580GB disk space software and reference databases\nFor optimal performance, we recommend running StrainCascade with 32 CPU cores, with 3GB of RAM allocated per core (= total of 96GB of RAM). If you run SC15 for de novo tree generation more than 100GB of RAM might be required."
   },
   {
     "objectID": "installation.html#system-requirements",
     "href": "installation.html#system-requirements",
     "title": "Installation",
     "section": "",
-    "text": "Linux OS (e.g., CentOS, Ubuntu, Debian, etc.)\n~ 580GB disk space software and reference databases\nFor optimal performance, we recommend running StrainCascade with 32 CPU cores, with 3GB of RAM allocated per core (= total of 96GB of RAM)."
+    "text": "Linux OS (e.g., CentOS, Ubuntu, Debian, etc.)\n~ 580GB disk space software and reference databases\nFor optimal performance, we recommend running StrainCascade with 32 CPU cores, with 3GB of RAM allocated per core (= total of 96GB of RAM). If you run SC15 for de novo tree generation more than 100GB of RAM might be required."
   },
   {
     "objectID": "installation.html#installation-dependencies",
     "href": "installation.html#installation-dependencies",
     "title": "Installation",
     "section": "2 Installation dependencies",
-    "text": "2 Installation dependencies\n\nGit\nApptainer\n(Optional: Conda/Miniconda)\nAll further software dependencies (listed in detail under Dependencies) are bundled in Apptainer images, which are automatically downloaded and used when installing/running StrainCascade. This approach enhances:\n\nEase of use: Simplified installation and execution process\nPortability: Consistent performance across different computing environments\nReproducibility: Ensures identical software environments for all users\nVersion control: Precise management of software versions and their interactions\nIsolation: Minimises conflicts with existing system libraries"
+    "text": "2 Installation dependencies\n\nGit\nApptainer\n(Recommended: Bash as command-line shell)\n(Optional: Conda/Miniconda)\nAll further software dependencies (listed in detail under Dependencies) are bundled in Apptainer images, which are automatically downloaded and used when installing/running StrainCascade. This approach enhances:\n\nEase of use: Simplified installation and execution process\nPortability: Consistent performance across different computing environments\nReproducibility: Ensures identical software environments for all users\nVersion control: Precise management of software versions and their interactions\nIsolation: Minimises conflicts with existing system libraries"
   },
   {
     "objectID": "installation.html#default-installation-interactive",
@@ -98,17 +98,17 @@
     "text": "5 Custom installation\nIn the event of an error, disruption, or if you prefer to install only specific Apptainer images or databases, you can choose n when prompted for a full installation. This will allow you to sequentially decide for each individual Apptainer image or database whether you want to download and install it.\nThis option is particularly useful in scenarios where:\n\nYou have limited disk space or bandwidth and need to prioritize specific components.\nYou encountered an error during a previous installation attempt and need to retry specific parts of the installation.\nYou are troubleshooting and want to isolate certain components for testing.\n\nWhen opting for a selective installation, the script will guide you through each component, providing a brief description and asking whether you wish to install it. This process ensures that only the necessary components are downloaded, giving you full control over the installation.\nExample Prompt:\nDo you want to install checkm2_db? (y/n)\nBy answering y or n to each prompt, you can customise the installation to your specific needs."
   },
   {
-    "objectID": "installation.html#updating-existing-straingcascade-software-instllation",
-    "href": "installation.html#updating-existing-straingcascade-software-instllation",
+    "objectID": "installation.html#updating-your-existing-straincascade-installation",
+    "href": "installation.html#updating-your-existing-straincascade-installation",
     "title": "Installation",
-    "section": "6 Updating existing StraingCascade software instllation",
-    "text": "6 Updating existing StraingCascade software instllation\nIf you have StrainCascade already installed but would like to update the software (scripts) without reinstalling Apptainer images or databeses, you can choose n when prompted for a full installation. You will then be prompted if you want to update the StrainCascade software: Do you want to update the StrainCascade software (scripts)? (y/n). If you choose y all current StrainCascade scripts will be updated.\nThis option is particularly useful in scenarios where:\n\nThere are improvements or bug fixes in the current release of StrainCascade software available that you want to use.\n\nNote: This will not replace the necessity of re-installment after new major version releases of StrainCase with new features, Apptainer images or databases."
+    "section": "6 Updating your existing StrainCascade installation",
+    "text": "6 Updating your existing StrainCascade installation\nStrainCascade provides separate update mechanisms for its three main components: software scripts, Apptainer images, and databases. You can update each component independently using specific command-line flags with the straincascade command.\nTo update the software scripts, use:\nstraincascade -us\nTo update the Apptainer images, use:\nstraincascade -uai\nTo update the databases, use:\nstraincascade -udb\nThese update options are particularly useful when you want to incorporate improvements, bug fixes, or new releases specific to each component without performing a complete reinstallation. For example, you might want to update just the databases when new reference data becomes available, or update the software scripts to access the latest features while keeping your existing images and databases.\nImportant Note: These individual update mechanisms are designed for minor version updates and patches. They do not replace the need for a complete reinstallation when major version releases introduce significant new features that affect multiple components of StrainCascade. In such cases, please refer to the full installation instructions for your specific version."
   },
   {
     "objectID": "installation.html#caveats",
     "href": "installation.html#caveats",
     "title": "Installation",
     "section": "7 CAVEATS",
-    "text": "7 CAVEATS\n\nPATH configuration for multiple installations: The installation process updates your PATH variable by modifying shell configuration files and/or the conda environment. StrainCascade generally supports multiple installations across different conda environments. If you experience issues, verify that your $PATH points to the correct StrainCascade installation.\nManaging Apptainer images after updates: When re-installing Apptainer images after a StrainCascade update, newer versions (indicated by a higher :v#) of a former image may be downloaded. Although older versions are typically removed (e.g., when using straincascade --update-images), there may be cases where previous Apptainer images remain. In such cases, StrainCascade will prioritize the first matching image, which may not always be the latest version. While this usually doesn’t cause errors, for optimal functionality, it’s recommended to check the apptainer_images directory and remove outdated versions after re-installations. You can find the apptainer_images directory in the StrainCascade installation directory and easily navigate to it with the following command (activate the conda environment first if necessary):\ncd $(dirname $(which straincascade))/../apptainer_images"
+    "text": "7 CAVEATS\n\nPATH configuration for multiple installations: The installation process updates your PATH variable by modifying shell configuration files and/or the conda environment. StrainCascade generally supports multiple installations across different conda environments. If you experience issues, verify that your $PATH points to the correct StrainCascade installation.\nManaging Apptainer images after updates: When re-installing Apptainer images after a StrainCascade update, newer versions (indicated by a higher :v#) of a former image may be downloaded. Although older versions are typically removed (e.g., when using straincascade -uai), there may be cases where previous Apptainer images remain. In such cases, StrainCascade will prioritize the first matching image, which may not always be the latest version. While this usually doesn’t cause errors, we recommend to check the apptainer_images directory and remove outdated versions after re-installations. You can find the apptainer_images directory in the StrainCascade installation directory. You can easily navigate to the apptainer_images directory with the following command (activate the conda environment first if necessary):\ncd $(dirname $(which straincascade))/../apptainer_images"
   }
 ]
