@@ -1,0 +1,3 @@
+::: {style="text-align: center;"}
+![](_includes//straincascade_logo_colour.png)
+:::

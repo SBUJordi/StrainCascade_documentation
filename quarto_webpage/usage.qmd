@@ -1,0 +1,228 @@
+---
+title: "Usage"
+---
+
+``` console
+Usage: straincascade [OPTIONS]
+
+straincascade options:
+  -i FILE/DIR       Input reads file or directory (mutually exclusive with -a, default: empty)
+  -a FILE/DIR       Input assembly file or directory (mutually exclusive with -i, default: empty)
+  -o DIR            Output directory (default: current directory)
+  -s TYPE           Sequencing type (default: pacbio-hifi)
+                    Options: pacbio-raw | pacbio-corr | pacbio-hifi | nano-raw | nano-corr | nano-hq
+  -t INT            Number of threads (default: 32)
+  -e MODE           Execution mode (mutually exclusive with -b, default: standard)
+                    Options: minimal | efficient | standard | comprehensive | custom:modules
+  -b BUNDLE         Bundle name (mutually exclusive with -e, default: empty)
+                    Options: assembly | annotation | functional | phage
+  -r TYPE           Result type (default: main)
+                    Options: all | main | R
+  -f yes/no         Force overwrite of existing files (default: yes)
+  -l STRING         Locus tag (default: automatic)
+  --deterministic | --heuristic Choose deterministic to optimise for reproducibility"
+                                at cost of computation time (default: heuristic)"
+
+Update options:
+  -us, --update-software    Update StrainCascade software to the latest version
+  -uai, --update-images     Update all Apptainer images
+  -udb, --update-databases  Update all databases
+
+General options:
+  -h, --help                Show a more detailed help message
+  -v, --version             Show version information
+```
+
+## Quick start (from sequencing files)
+
+To quickly run StrainCascade on a sequencing file from the command line interface, use the following minimal command:
+
+``` bash
+straincascade -i /path/to/your/input_file
+```
+
+**Note:** Running StrainCascade is resource-intensive and will overwhelm standard desktop or laptop computers. For optimal performance, we strongly recommend using a high-performance computing (HPC) environment.
+
+For efficient execution, it's recommended to submit pipeline jobs as a SLURM SBATCH job. Below is an example of a basic SLURM submission script. Be sure to adjust the `--partition` parameter to match your environment:
+
+``` bash
+#!/bin/bash #SBATCH 
+#--job-name="StrainCascade" 
+#SBATCH --output=StrainCascade\_%j.out 
+#SBATCH --cpus-per-task=32 
+#SBATCH --mem-per-cpu=3G #96GB total 
+#SBATCH --partition=your_partition
+
+# Execute the job
+
+straincascade -i /path/to/your/input_file -t 32
+```
+
+To submit the script to your SLURM scheduler, use:
+
+``` bash
+sbatch your_SBATCH_script.sh
+```
+
+## Quick start (from assembly files)
+
+To quickly run StrainCascade on an already assembled genome from the command line interface, use the following minimal command:
+
+``` bash
+straincascade -a /path/to/your/input_file
+```
+
+**Note:** Running StrainCascade is resource-intensive and will overwhelm standard desktop or laptop computers. For optimal performance, we strongly recommend using a high-performance computing (HPC) environment.
+
+For efficient execution, it's recommended to submit pipeline jobs as a SLURM SBATCH job. Below is an example of a basic SLURM submission script. Be sure to adjust the `--partition` parameter to match your environment:
+
+``` bash
+#!/bin/bash #SBATCH 
+#--job-name="StrainCascade" 
+#SBATCH --output=StrainCascade\_%j.out 
+#SBATCH --cpus-per-task=32 
+#SBATCH --mem-per-cpu=3G #96GB total 
+#SBATCH --partition=your_partition
+
+# Execute the job
+
+straincascade -a /path/to/your/input_file -t 32
+```
+
+To submit the script to your SLURM scheduler, use:
+
+``` bash
+sbatch your_SBATCH_script.sh
+```
+
+## High throughput SBATCH set-up (from sequencing files)
+
+For processing multiple sequencing files in a high-throughput manner, you can use a provided submission script that automates the creation of individual SLURM jobs for each input file contained in a specified input directory. Here's an example of how to set this up:
+
+First, navigate to the StrainCascade installation directory:
+
+``` bash
+cd $(dirname $(which straincascade))/..
+```
+
+Then you can generate batch submissions for multiple files as illustrated exemplarily below:
+
+``` bash
+# For minimal usage with required arguments only
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input_directory -p my_partition
+
+# With sequencing type
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input_directory -p my_partition -s pacbio-raw
+
+# With all optional parameters
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input_directory -p my_partition -s pacbio-raw -n user@example.com -f file_list.txt
+
+# Parameters can be in any order
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -s pacbio-hifi -i /path/to/input_directory -n user@example.com -p my_partition
+```
+
+**Further explanation:**
+
+``` console
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh
+Usage: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i <input_directory> -p <partition> [-s <sequencing_type>] [-n <notification>] [-f <file_list>]
+Required arguments:
+  -i <input_directory>: Directory containing input files
+  -p <partition>: SLURM partition to use for the job
+Optional arguments:
+  -s <sequencing_type>: Sequencing type (default: pacbio-hifi)
+                        Valid options: pacbio-raw, pacbio-corr, pacbio-hifi, nano-raw, nano-corr, nano-hq
+  -n <notification>: Email address for notifications
+  -f <file_list>: File with specific filenames to process (one filename per line)
+  -----------------------------------------------------------------
+  Example usage 1: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input/directory -p your_partition -s pacbio-raw
+  Example usage 2: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input/directory -p your_partition -s pacbio-hifi -n your.email@example.com -f file_list.txt
+```
+
+-   By default the script will generate a submission script for each file in the input directory with one of the following endings: `.bam`, `fastq`, `fastq.gz`, `.fasta`, `fna` or `.fa`. The files will be submitted to the SLURM scheduler. Optionally, you can provide a text file (`file_list`) limiting execution to specific files in the input directory.
+
+-   By default the script will execute a standard run of StainCascade for each of the samples as SBATCH job: `straincascade -a "$input_file" -r main -t 32` (using 96GB of RAM). If you are experienced with StrainCascade and using SBATCH and want to customize the execution, you can modify the script to your needs.
+
+-   The script will submit the individual SLURM jobs with job configurations as shown below. Make sure that these are appropriate for your system (e.g., number of CPUs, memory allocation, time limits etc.).
+
+    ``` bash
+    #!/bin/bash
+    #--job-name=straincascade_${base_name}
+    #--output=${REPORT_DIR}/StrainCascade_${base_name}_%j.out
+    #--cpus-per-task=32
+    #--mem-per-cpu=3G
+    #--time=48:00:00
+    #--partition=$PARTITION
+    #--mail-user=$EMAIL
+    #--mail-type=end,fail
+    ```
+
+## High throughput SBATCH set-up (from assembly files)
+
+For processing multiple already assembled genomes in a high-throughput manner, you can use a provided submission script that automates the creation of individual SLURM jobs for each input file contained in a specified input directory. Here's an example of how to set this up:
+
+First, navigate to the StrainCascade installation directory:
+
+``` bash
+cd $(dirname $(which straincascade))/..
+```
+
+Then you can generate batch submissions for multiple files as illustrated exemplarily below:
+
+``` bash
+# For minimal usage with required arguments only
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input_directory -p my_partition
+
+# With sequencing type
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input_directory -p my_partition -s pacbio-raw
+
+# With all optional parameters
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input_directory -p my_partition -s pacbio-raw -n user@example.com -f file_list.txt
+
+# Parameters can be in any order
+./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -s pacbio-hifi -i /path/to/input_directory -n user@example.com -p my_partition
+```
+
+**Further explanation:**
+
+``` console
+Usage: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i <input_directory> -p <partition> [-s <sequencing_type>] [-n <notification>] [-f <file_list>]
+Required arguments:
+  -i <input_directory>: Directory containing input files
+  -p <partition>: SLURM partition to use for the job
+Optional arguments:
+  -s <sequencing_type>: Sequencing type (default: pacbio-hifi)
+                        Valid options: pacbio-raw, pacbio-corr, pacbio-hifi, nano-raw, nano-corr, nano-hq
+  -n <notification>: Email address for notifications
+  -f <file_list>: File with specific filenames to process (one filename per line)
+  -----------------------------------------------------------------
+  Example usage 1: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input/directory -p your_partition -s pacbio-raw
+  Example usage 2: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input/directory -p your_partition -s pacbio-hifi -n your.email@example.com -f file_list.txt
+```
+
+-   By default the script will generate a submission script for each file in the input directory with one of the following endings: `.fasta`, `fna` or `.fa`. The files will be submitted to the SLURM scheduler. Optionally, you can provide a text file (`file_list`) limiting execution to specific files in the input directory.
+
+-   By default the script will execute a standard run of StainCascade for each of the samples as SBATCH job: `straincascade -a "$input_file" -r main -t 32` (using 96GB of RAM). If you are experienced with StrainCascade and using SBATCH and want to customize the execution, you can modify the script to your needs.
+
+-   The script will submit the individual SLURM jobs with job configurations as shown below. Make sure that these are appropriate for your system (e.g., number of CPUs, memory allocation, time limits etc.).
+
+    ``` bash
+    #!/bin/bash
+    #--job-name=straincascade_${base_name}
+    #--output=${REPORT_DIR}/StrainCascade_${base_name}_%j.out
+    #--cpus-per-task=32
+    #--mem-per-cpu=3G
+    #--time=48:00:00
+    #--partition=$PARTITION
+    #--mail-user=$EMAIL
+    #--mail-type=end,fail
+    ```
+
+## Updating StrainCascade
+
+To keep your StrainCascade installation current, you can freshly [install new major releases](installation.qmd#default-installation-interactive) or [update existing components](installation.qmd#updating-your-existing-straincascade-installation). 
+For instructions on installing new releases and updating StrainCascade components, please refer to [Updating your existing StrainCascade installation].
+
+## CAVEATS
+
+-   **Conda environment and PATH variable in SBATCH jobs:** When submitting `sbatch` jobs, it is important to note that your Conda environment will not remain active. If you have multiple installations of StrainCascade, each installation will add its respective paths to the `PATH` variable. Only by activating the correct Conda environment in your `sbatch` script (not implement in above examples) will you ensure that the appropriate paths are used, allowing StrainCascade to function as expected. Without this activation, `sbatch` jobs may inadvertently use incorrect paths, potentially leading to errors or unexpected behaviour.
