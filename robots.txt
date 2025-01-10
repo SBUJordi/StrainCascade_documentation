@@ -1,1 +1,1 @@
-Sitemap: https://SBUJordi.github.io/StrainCascade_prepublish_documentation/sitemap.xml
+Sitemap: https://SBUJordi.github.io/StrainCascade_documentation/sitemap.xml

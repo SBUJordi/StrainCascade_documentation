@@ -6025,7 +6025,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/SBUJordi\.github\.io\/StrainCascade_prepublish_documentation\/");
+      var filterRegex = new RegExp("https:\/\/SBUJordi\.github\.io\/StrainCascade_documentation\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
