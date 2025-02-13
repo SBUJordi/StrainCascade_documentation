@@ -5,63 +5,18 @@ title: "StrainCascade software licenses"
 # Software license for StrainCascade
 
 ```         
-StrainCascade License
+MIT No Attribution License
 
-Version 1.0, June 2024
+Copyright (c) 2024-2025, University of Bern, Department for BioMedical Research, Sebastian Bruno Ulrich JORDI
 
-Sebastian Bruno Ulrich Jordi ("Licensor") hereby grants permission to any person or entity ("Licensee") to use StrainCascade, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
 
-1.  Ownership and Attribution:
-
-    -   StrainCascade, including all associated original scripts, images, and documentation (the "Software"), is owned by Sebastian Bruno Ulrich Jordi.
-    -   This Software integrates third-party software, which is subject to its respective licenses. Licensee must comply with all applicable third-party licenses.
-    -   Licensee must retain the following attribution notice in all copies or substantial portions of the Software: © 2024 Sebastian Bruno Ulrich Jordi. All rights reserved.
-
-2.  Modular Structure and Licensing:
-
-    -   StrainCascade is a modular tool where most third-party software is executed in separate scripts, allowing each module to be executed independently of the others.
-    -   Original scripts within the Software that do not encode third-party software with conflicting licenses are governed by this license. These scripts explicitly include but are not limited to the following: straincascade, StrainCascade_run_configuration_handler.py, StrainCascade_pipeline_wrapper.sh, StrainCascade_assembly_selection.py, StrainCascade_input_file_handler.sh XXXXXXXXX
-    -   Scripts that encode third-party software are governed by this license only to the extent that it does not conflict with the licenses of the third-party software. In cases of conflict, the third-party software's license shall apply exclusively to the relevant script or module.
-
-3.  Permitted Use:
-
-    -   The original components of the Software may be used publicly only for research and non-profit purposes. Commercial use of the original components by Licensee is expressly prohibited.
-    -   Licensee may modify the original components of the Software for their research purposes, provided that:
-        -   Any modifications are also used solely for research and non-profit purposes.
-        -   Modifications must be made available for unrestricted use by others under the same terms as this license.
-    -   Use of incorporated third-party software must comply with their respective licenses.
-
-4.  Licensor's Rights:
-
-    -   The Licensor reserves the exclusive right to use the Software and any modifications commercially.
-
-5.  Publication and Citation:
-
-    -   Any publication, presentation, or other dissemination of research results obtained using the Software must include a citation to the following source: Jordi, S. B. U. (2024). StrainCascade. https://github.com/SBUJordi/StrainCascade.
-    -   Failure to provide proper citation constitutes a breach of this license.
-
-6.  Redistribution:
-
-    -   Licensee may redistribute the original components of the Software, provided that this license agreement is included with any such redistribution and that the redistributed Software retains the attribution notice and citation requirement.
-    -   Modifications to the Software must be made available for unrestricted use by others under the same terms as this license.
-    -   Redistribution of third-party software must comply with their respective licenses.
-
-7.  Warranty Disclaimer:
-
-    -   The original components of the Software are provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
-    -   The Licensor makes no warranties regarding third-party software included in the Software.
-    -   In no event shall the Licensor be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the original components of the Software or the use or other dealings in the original components of the Software.
-
-8.  Governing Law:
-
-    -   This License shall be governed by and construed in accordance with Swiss law, without regard to its conflict of law principles.
-
-By using the Software, Licensee agrees to be bound by the terms and conditions of this License and the respective licenses of the third-party software included in the Software.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 # Software Licenses for Third-Party Tools Used in StrainCascade
 
-> **Disclaimer**: The information provided here is for general guidance only. We do not guarantee the correctness or completeness of the license details listed. The authors and maintainers of StrainCascade are not liable for any discrepancies or legal issues that may arise from using the software. Users are strongly encouraged to verify the licenses of the software tools themselves to ensure compliance with their intended use.
+> **Disclaimer**: The information provided here is for general guidance only. We do not guarantee the correctness or completeness of the license details listed. The authors and maintainers of StrainCascade are not liable for any discrepancies or legal issues that may arise from using the software shipped withed containers. Users are strongly encouraged to verify the licenses of the software tools themselves to ensure compliance with their intended use.
 
 ------------------------------------------------------------------------
 
@@ -82,13 +37,14 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/canu_license.qmd" >}}
 
-</details> 
+</details>
 
-</details> 
+</details>
 
 ### LJA Assembly
 
@@ -107,6 +63,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/lja_license.qmd" >}}
@@ -130,11 +87,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/spades_license.qmd" >}}
 
-</details> 
+</details>
 
 ### Flye Assembly
 
@@ -153,11 +111,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/flye_license.qmd" >}}
 
-</details> 
+</details>
 
 ### QUAST assembly assessment
 
@@ -176,11 +135,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/quast_license.qmd" >}}
 
-</details> 
+</details>
 
 ### MAC2.0 Assembly Merging
 
@@ -194,7 +154,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **Tool URL:** [MAC2.0](https://github.com/bioinfomaticsCSU/MAC)
 
--   **Information added:** October 13, 2024 
+-   **Information added:** October 13, 2024
 
 ### Circlator Circularisation
 
@@ -213,11 +173,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/circlator_license.qmd" >}}
 
-</details> 
+</details>
 
 ### Arrow polishing
 
@@ -230,6 +191,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **License:** BSD-3-Clause-Clear
 
 -   **Tool URL:** [bioconda genomicconsensus](https://anaconda.org/bioconda/genomicconsensus)
+
 -   **Tool URL:** [git pbbioconda](https://github.com/PacificBiosciences/pbbioconda)
 
 -   **Information added:** October 14, 2024
@@ -237,11 +199,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/arrow_conda_genomicconsensus_license.qmd" >}}
 
-</details> 
+</details>
 
 ### Medaka polishing
 
@@ -251,9 +214,10 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_arrow_medaka_polishing.sh
 
--   **License:** Oxford Nanopore Technologies PLC. Public License Version 1.0 / MPL-2.0 
+-   **License:** Oxford Nanopore Technologies PLC. Public License Version 1.0 / MPL-2.0
 
 -   **Tool URL:** [Bioconda medaka](https://anaconda.org/bioconda/medaka)
+
 -   **Tool URL:** [GitHub medaka](https://github.com/nanoporetech/medaka)
 
 -   **Information added:** October 14, 2024
@@ -261,11 +225,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/medaka_conda_genomicconsensus_license.qmd" >}}
 
-</details> 
+</details>
 
 ### NGMLR coverage assessment
 
@@ -275,7 +240,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_NGMLR_BBMap_coverage.sh
 
--   **License:** MIT 
+-   **License:** MIT
 
 -   **Tool URL:** [NGMLR](https://github.com/philres/ngmlr)
 
@@ -284,11 +249,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/ngmlr_license.qmd" >}}
 
-</details>  
+</details>
 
 ### BBMap coverage assessment
 
@@ -298,7 +264,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_NGMLR_BBMap_coverage.sh
 
--   **License:** BSD 3-Clause-like 
+-   **License:** BSD 3-Clause-like
 
 -   **Tool URL:** [BBMap](https://sourceforge.net/projects/bbmap/)
 
@@ -307,11 +273,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/bbmap_license.qmd" >}}
 
-</details>   
+</details>
 
 ### CheckM2 QC
 
@@ -330,11 +297,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/checkm2_license.qmd" >}}
 
-</details>    
+</details>
 
 ### GTDB-Tk taxonomy
 
@@ -347,6 +315,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **License:** GNU GPL v3
 
 -   **Tool URL:** [GTDB](https://gtdb.ecogenomic.org/)
+
 -   **Tool URL:** [GTDB-Tk](https://github.com/Ecogenomics/GTDBTk)
 
 -   **Information added:** October 24, 2024
@@ -354,6 +323,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/gtdbtk_license.qmd" >}}
@@ -377,11 +347,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/bakta_license.qmd" >}}
 
-</details> 
+</details>
 
 ### Prokka annotation
 
@@ -400,11 +371,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/prokka_license.qmd" >}}
 
-</details> 
+</details>
 
 ### MicrobeAnnotator annotation
 
@@ -423,11 +395,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/microbeannotator_license.qmd" >}}
 
-</details> 
+</details>
 
 ### PlasmidFinder plasmid identification
 
@@ -446,11 +419,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/plasmidfinder_license.qmd" >}}
 
-</details> 
+</details>
 
 ### AMRFinderPlus antimicrobial resistance identification
 
@@ -469,11 +443,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/amrfinderplus_license.qmd" >}}
 
-</details> 
+</details>
 
 ### ResFinder antimicrobial resistance identification
 
@@ -492,11 +467,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/resfinder_license.qmd" >}}
 
-</details> 
+</details>
 
 ### dbCAN3 CAZymes identification
 
@@ -506,7 +482,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_dbCAN3_CAZymes_identification.sh
 
--   **License:**  GNU GPL v3
+-   **License:** GNU GPL v3
 
 -   **Tool URL:** [dbCAN3](https://github.com/linnabrown/run_dbcan)
 
@@ -515,11 +491,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/dbcan3_license.qmd" >}}
 
-</details> 
+</details>
 
 ### IslandPath genomic islands identification
 
@@ -529,7 +506,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_IslandPath_genomic_islands_identification.sh
 
--   **License:**  GNU GPL v3
+-   **License:** GNU GPL v3
 
 -   **Tool URL:** [IslandPath](https://github.com/brinkmanlab/islandpath)
 
@@ -538,11 +515,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/islandpath_license.qmd" >}}
 
-</details> 
+</details>
 
 ### VirSorter2 viral sequences identification
 
@@ -552,7 +530,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_VirSorter2_phage_identification.sh
 
--   **License:**  GNU GPL v2
+-   **License:** GNU GPL v2
 
 -   **Tool URL:** [VirSorter2](https://github.com/jiarong/VirSorter2)
 
@@ -561,11 +539,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/virsorter2_license.qmd" >}}
 
-</details>  
+</details>
 
 ### DeepVirFinder viral sequences identification
 
@@ -575,7 +554,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_DeepVirFinder_phage_identification.sh
 
--   **License:**  USC-RL v1
+-   **License:** USC-RL v1
 
 -   **Tool URL:** [DeepVirFinder](https://github.com/jessieren/DeepVirFinder)
 
@@ -584,11 +563,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/deepvirfinder_license.qmd" >}}
 
-</details>   
+</details>
 
 ### CrisprCasFinder CRISPR-Cas system identification
 
@@ -598,7 +578,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_CRISPRCasFinder_identification.sh
 
--   **License:**  GNU GPL v3
+-   **License:** GNU GPL v3
 
 -   **Tool URL:** [CRISPRCasFinder](https://github.com/dcouvin/CRISPRCasFinder)
 
@@ -607,11 +587,12 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/crisprcasfinder_license.qmd" >}}
 
-</details>   
+</details>
 
 ### ISEScan insertion sequence (IS) elements identification
 
@@ -621,7 +602,7 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 
 -   **StrainCascade script:** StrainCascade_ISEScan_IS_elements_identification.sh
 
--   **License:**  Apache License 2.0
+-   **License:** Apache License 2.0
 
 -   **Tool URL:** [ISEScan](https://github.com/xiezhq/ISEScan)
 
@@ -630,8 +611,9 @@ By using the Software, Licensee agrees to be bound by the terms and conditions o
 -   **Full license text:**
 
 <details>
+
 <summary>Click to expand</summary>
 
 {{< include "_includes/isescan_license.qmd" >}}
 
-</details> 
+</details>

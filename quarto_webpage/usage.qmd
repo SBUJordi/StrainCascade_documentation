@@ -46,8 +46,8 @@ straincascade -i /path/to/your/input_file
 For efficient execution, it's recommended to submit pipeline jobs as a SLURM SBATCH job. Below is an example of a basic SLURM submission script. Be sure to adjust the `--partition` parameter to match your environment:
 
 ``` bash
-#!/bin/bash #SBATCH 
-#--job-name="StrainCascade" 
+#!/bin/bash 
+#SBATCH --job-name="StrainCascade" 
 #SBATCH --output=StrainCascade\_%j.out 
 #SBATCH --cpus-per-task=32 
 #SBATCH --mem-per-cpu=3G #96GB total 
@@ -77,8 +77,8 @@ straincascade -a /path/to/your/input_file
 For efficient execution, it's recommended to submit pipeline jobs as a SLURM SBATCH job. Below is an example of a basic SLURM submission script. Be sure to adjust the `--partition` parameter to match your environment:
 
 ``` bash
-#!/bin/bash #SBATCH 
-#--job-name="StrainCascade" 
+#!/bin/bash 
+#SBATCH --job-name="StrainCascade" 
 #SBATCH --output=StrainCascade\_%j.out 
 #SBATCH --cpus-per-task=32 
 #SBATCH --mem-per-cpu=3G #96GB total 
@@ -220,8 +220,7 @@ Optional arguments:
 
 ## Updating StrainCascade
 
-To keep your StrainCascade installation current, you can freshly [install new major releases](installation.qmd#default-installation-interactive) or [update existing components](installation.qmd#updating-your-existing-straincascade-installation). 
-For instructions on installing new releases and updating StrainCascade components, please refer to [Updating your existing StrainCascade installation].
+To keep your StrainCascade installation current, you can freshly [install new major releases](installation.qmd#default-installation-interactive) or [update existing components](installation.qmd#updating-your-existing-straincascade-installation). For instructions on installing new releases and updating StrainCascade components, please refer to \[Updating your existing StrainCascade installation\].
 
 ## CAVEATS
 

@@ -97,51 +97,6 @@ For a complete installation from scratch, choose `y` when asked.
 
 The installation may take between 12 hours to over a day, depending on your system and network speed.
 
-## Default installation (SBATCH)
-
-If you are using an institutional HPC (High-Performance Computing) account with SLURM (Simple Linux Utility for Resource Management), you can install StrainCascade using SBATCH. Follow these steps:
-
-Optional - Create and activate a conda environment for StrainCascade:
-
-``` bash
-conda create -n StrainCascade_env
-conda activate StrainCascade_env
-```
-
-Optional - Navigate to your StrainCascade conda environment directory:
-
-``` bash
-cd $CONDA_PREFIX
-```
-
-Clone the StrainCascade GitHub repository to your current working directory
-
-``` bash
-git clone https://github.com/SBUJordi/StrainCascade.git
-```
-
-Navigate to the new StrainCascade directory
-
-``` bash
-cd StrainCascade
-```
-
-Make all scripts (including the ones in subdirectories) of StrainCascade executable
-
-``` bash
-find scripts/ -type f -exec chmod +x {} \;
-```
-
-Execute the SBATCH installation script, which pulls Apptainer images and downloads databases.
-
-``` bash
-./scripts/SBATCH_scripts/StrainCascade_SBATCH_full_installation.sh your_partition your.email@example.com
-```
-
-Replace `your_partition` with your HPC's SLURM partition name and `your.email@example.com` with your email address for job notifications.
-
-The installation will be handled by SLURM and may take between 12 hours to over a day, depending on your system and network speed. You will receive an email notification when the installation is complete or if it fails.
-
 ## Custom installation
 
 In the event of an error, disruption, or if you prefer to install only specific Apptainer images or databases, you can choose `n` when prompted for a full installation. This will allow you to sequentially decide for each individual Apptainer image or database whether you want to download and install it.
@@ -194,7 +149,7 @@ These update options are particularly useful when you want to incorporate improv
 
 -   **PATH configuration for multiple installations:** The installation process updates your `PATH` variable by modifying shell configuration files and/or the conda environment. StrainCascade generally supports multiple installations across different conda environments. If you experience issues, verify that your `$PATH` points to the correct StrainCascade installation.
 
--   **Installation of third-party databases:** StrainCascade downloads and installs several third-party databases during the installation process. These databases are essential for StrainCascade to function correctly. During development and testing installations of larger databases (e.g. GTDB-Tk or [ARMFinderPlus for Bakta](https://github.com/oschwengers/bakta/issues/268)) have caused issues at times. Most often these problems were due to network connectivity, server or local SLURM issues and would relove on its own. We recommend to try the installation again after a few hours or days. If problems persist during during SBATCH (SLURM) installations, please try the interactive default installation as robust alterative.
+-   **Installation of third-party databases:** StrainCascade downloads and installs several third-party databases during the installation process. These databases are essential for StrainCascade to function correctly. During development and testing installations of larger databases (e.g. GTDB-Tk or [ARMFinderPlus for Bakta](https://github.com/oschwengers/bakta/issues/268)) have caused issues at times. Most often these problems were due to network connectivity, server or local SLURM issues and would relove on its own. We recommend to try the installation again after a few hours or days.
 
 -   **Managing Apptainer images after updates:** When re-installing Apptainer images after a StrainCascade update, newer versions (indicated by a higher :v#) of a former image may be downloaded. Although older versions are typically removed (e.g., when using `straincascade -uai`), there may be cases where previous Apptainer images remain. In such cases, StrainCascade will prioritize the first matching image, which may not always be the latest version. While this usually doesn't cause errors, we recommend to check the `apptainer_images` directory and remove outdated versions after re-installations. You can find the `apptainer_images` directory in the StrainCascade installation directory. You can easily navigate to the `apptainer_images` directory with the following command (activate the conda environment first if necessary):
 
