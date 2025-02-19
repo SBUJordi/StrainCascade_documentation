@@ -14,7 +14,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-# Software Licenses for Third-Party Tools Used in StrainCascade
+# Software licenses for third-party tools used in StrainCascade
 
 > **Disclaimer**: The information provided here is for general guidance only. We do not guarantee the correctness or completeness of the license details listed. The authors and maintainers of StrainCascade are not liable for any discrepancies or legal issues that may arise from using the software shipped with containers. Users are strongly encouraged to verify the licenses of the software tools themselves to ensure compliance with their intended use.
 
