@@ -324,7 +324,7 @@ Optional arguments:
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters can be in any order</span></span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh</span> <span class="at">-s</span> pacbio-hifi <span class="at">-i</span> /path/to/input_directory <span class="at">-n</span> user@example.com <span class="at">-p</span> my_partition</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Further explanation:</strong></p>
-<pre class="console"><code>Usage: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i &lt;input_directory&gt; -p &lt;partition&gt; [-s &lt;sequencing_type&gt;] [-n &lt;notification&gt;] [-f &lt;file_list&gt;]
+<pre class="console"><code>Usage: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i &lt;input_directory&gt; -p &lt;partition&gt; [-s &lt;sequencing_type&gt;] [-n &lt;notification&gt;] [-f &lt;file_list&gt;] [-c &lt;cpus&gt;] [-m &lt;memory&gt;]
 Required arguments:
   -i &lt;input_directory&gt;: Directory containing input files
   -p &lt;partition&gt;: SLURM partition to use for the job
@@ -333,9 +333,11 @@ Optional arguments:
                         Valid options: pacbio-raw, pacbio-corr, pacbio-hifi, nano-raw, nano-corr, nano-hq
   -n &lt;notification&gt;: Email address for notifications
   -f &lt;file_list&gt;: File with specific filenames to process (one filename per line)
+  -c &lt;cpus&gt;: Number of CPUs per task (default: 32)
+  -m &lt;memory&gt;: Memory per CPU in GB (default: 3)
   -----------------------------------------------------------------
-  Example usage 1: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input/directory -p your_partition -s pacbio-raw
-  Example usage 2: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input/directory -p your_partition -s pacbio-hifi -n your.email@example.com -f file_list.txt</code></pre>
+  Example usage 1: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input/directory -p your_partition -s pacbio-raw
+  Example usage 2: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input/directory -p your_partition -s pacbio-hifi -n your.email@example.com -f file_list.txt -c 10 -m 5</code></pre>
 <ul>
 <li><p>By default the script will generate a submission script for each file in the input directory with one of the following endings: <code>.fasta</code>, <code>fna</code> or <code>.fa</code>. The files will be submitted to the SLURM scheduler. Optionally, you can provide a text file (<code>file_list</code>) limiting execution to specific files in the input directory.</p></li>
 <li><p>By default the script will execute a standard run of StainCascade for each of the samples as SBATCH job: <code>straincascade -a "$input_file" -r main -t 32</code> (using 96GB of RAM). If you are experienced with StrainCascade and using SBATCH and want to customize the execution, you can modify the script to your needs.</p></li>
