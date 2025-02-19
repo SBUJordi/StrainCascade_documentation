@@ -186,7 +186,7 @@ Then you can generate batch submissions for multiple files as illustrated exempl
 **Further explanation:**
 
 ``` console
-Usage: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i <input_directory> -p <partition> [-s <sequencing_type>] [-n <notification>] [-f <file_list>]
+Usage: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i <input_directory> -p <partition> [-s <sequencing_type>] [-n <notification>] [-f <file_list>] [-c <cpus>] [-m <memory>]
 Required arguments:
   -i <input_directory>: Directory containing input files
   -p <partition>: SLURM partition to use for the job
@@ -195,9 +195,11 @@ Optional arguments:
                         Valid options: pacbio-raw, pacbio-corr, pacbio-hifi, nano-raw, nano-corr, nano-hq
   -n <notification>: Email address for notifications
   -f <file_list>: File with specific filenames to process (one filename per line)
+  -c <cpus>: Number of CPUs per task (default: 32)
+  -m <memory>: Memory per CPU in GB (default: 3)
   -----------------------------------------------------------------
-  Example usage 1: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input/directory -p your_partition -s pacbio-raw
-  Example usage 2: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_assembly_files.sh -i /path/to/input/directory -p your_partition -s pacbio-hifi -n your.email@example.com -f file_list.txt
+  Example usage 1: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input/directory -p your_partition -s pacbio-raw
+  Example usage 2: ./scripts/SBATCH_scripts/StrainCascade_high_throughput_SBATCH_sequencing_files.sh -i /path/to/input/directory -p your_partition -s pacbio-hifi -n your.email@example.com -f file_list.txt -c 10 -m 5
 ```
 
 -   By default the script will generate a submission script for each file in the input directory with one of the following endings: `.fasta`, `fna` or `.fa`. The files will be submitted to the SLURM scheduler. Optionally, you can provide a text file (`file_list`) limiting execution to specific files in the input directory.
