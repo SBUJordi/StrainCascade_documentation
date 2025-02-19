@@ -12,14 +12,14 @@ website:
         text: Installation
       - href: usage.qmd
         text: Usage
-      - href: tutorial.qmd
-        text: Tutorial
+#      - href: tutorial.qmd
+#        text: Tutorial
 #      - href: documentation.qmd
 #        text: Documentation
-      - href: dependencies.qmd
-        text: Dependencies
-      - href: publications.qmd
-        text: Publications
+#      - href: dependencies.qmd
+#        text: Dependencies
+#      - href: publications.qmd
+#        text: Publications
       - href: license.qmd
         text: License
         
