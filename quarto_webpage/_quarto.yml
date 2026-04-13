@@ -27,6 +27,10 @@ website:
 
 format:
   html:
+    include-in-header:
+      - text: |
+          <meta http-equiv="refresh" content="0; url=https://sbujordi.github.io/StrainCascade/">
+          <script>window.location.replace("https://sbujordi.github.io/StrainCascade/")</script>
     theme:
       - flatly
       - custom.scss
